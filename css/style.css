@@ -1,0 +1,156 @@
+/**
+ * file: css/style.css
+ **/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html,
+body {}
+
+
+body {
+    background-color: crimson;
+    padding: 0;
+    margin: 0;
+}
+
+#myVideo {
+    width: 100%;
+}
+
+.video {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Får siden til at snappe til articles */
+main {
+
+    height: 100vh;
+
+}
+
+article {
+    margin: 2% 0;
+    height: 100vh;
+}
+
+section {
+    margin: auto;
+    width: 100%;
+    padding: 7% 0;
+}
+
+/* Den skal være gennemsigtig og skubbe y-aksen fra klassen 20px ned med 0.5s */
+.intro-text {
+    margin: auto;
+    width: 80%;
+    opacity: 0;
+    transform: translateY(150px);
+    transition: 1.5s all ease-in-out;
+}
+
+.intro-appear {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+
+
+/* Får tekst og billede til at være ved siden af hinanden */
+.intro-content {
+    display: grid;
+    grid-template-columns: no-repeat(2, 1fr);
+    background-color: white;
+    padding: 4% 5%;
+}
+
+.intro-content img {
+    width: 400px;
+    border-radius: 50%;
+    border: 5px solid crimson;
+}
+
+.intro-billede {
+    margin: auto;
+    grid-column: 2;
+}
+
+
+
+
+/*Slideshow */
+.slideshow {
+    padding: 0;
+}
+
+.mySlides {
+    display: none;
+}
+
+.slideshow-container img {
+    vertical-align: middle;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    /* Margin er til for at skabe lige meget luft over og under */
+}
+
+/* Størrelse og position af slideshow */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    /* Sørger for at slideshowet er placeret i midten af skærmen */
+}
+
+/* Dots der indikere hvilket nr. billede man er ved. De er stylet til at have en bestemt størrelse, farve og placering */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: lightpink;
+    /* De inaktive dots */
+    border-radius: 50%;
+    display: inline-block;
+    /* uden den dukker dots ikke op */
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: crimson;
+    /* Den aktive dot */
+}
+
+/* Fading animation til når billedet skifter til et andet */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
